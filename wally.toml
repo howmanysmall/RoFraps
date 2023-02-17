@@ -6,7 +6,7 @@ realm = "shared"
 registry = "https://github.com/UpliftGames/wally-index"
 version = "1.0.0"
 exclude = [
-	"docs", ".moonwave", "test",
+	"docs", ".moonwave", "test", "build",
 	"RoFraps.rbxm", "RoFraps.rbxmx",
 	"changelog.md", "README.md", ".styluaignore", ".gitignore",
 	"aftman.toml", "moonwave.toml", "selene.toml", "stylua.toml", "testez-companion.toml", "testez.toml"
