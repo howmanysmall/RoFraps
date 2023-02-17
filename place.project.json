@@ -1,0 +1,15 @@
+{
+	"name": "RoFraps",
+	"globIgnorePaths": [],
+	"tree": {
+		"$className": "DataModel",
+		"ReplicatedStorage": {
+			"$className": "ReplicatedStorage",
+			"$ignoreUnknownInstances": true,
+			"RoFraps": {
+				"$ignoreUnknownInstances": true,
+				"$path": "src"
+			}
+		}
+	}
+}
