@@ -3,6 +3,9 @@ local RunService = game:GetService("RunService")
 local CircularBuffer = require(script:FindFirstChild("CircularBuffer"))
 local Signal = require(script:FindFirstChild("Signal"))
 
+local CreateFrame = require(script:FindFirstChild("CreateFrame"))
+local MergeDefaults = require(script:FindFirstChild("MergeDefaults"))
+
 --[=[
 	If you know the recording software called FRAPS, that's what this is named after. FRAPS is not just a recording software, but it also allows
 	benchmarking. It offers a way to view the current framerate on screen and measure the average, max, and min framerates by default, and with
@@ -131,10 +134,13 @@ function RoFraps.new(UpdateRate: number?)
 		PointOnePercentLow = 0;
 		PointOnePercentLowAverage = 0;
 
+		CleanupFunction = nil :: nil | () -> ();
 		Connection = nil :: RBXScriptConnection?;
+
 		AverageBuffer = CircularBuffer.FromPreallocation(1000, 0);
 		FramerateBuffer = CircularBuffer.FromPreallocation(1000, 0);
 		FrameUpdateArray = table.create(100) :: {number};
+
 		TotalTime = 0;
 	}, RoFraps)
 end
@@ -245,11 +251,132 @@ function RoFraps:Stop()
 	return self
 end
 
+local UpdateTextFunctions = {
+	ShowFramerate = function(self: Class, TextLabel: TextLabel)
+		TextLabel.Text = string.format(
+			"<stroke color=\"#000000\" joins=\"miter\" thickness=\"2\"><b>FPS: </b>%* / %*</stroke>",
+			math.round(self.Framerate),
+			math.round(self.FramerateAverage)
+		)
+	end;
+
+	ShowMax = function(self: Class, TextLabel: TextLabel)
+		TextLabel.Text = string.format(
+			"<stroke color=\"#000000\" joins=\"miter\" thickness=\"2\"><b>MAX: </b>%*</stroke>",
+			math.round(self.Max)
+		)
+	end;
+
+	ShowMin = function(self: Class, TextLabel: TextLabel)
+		TextLabel.Text = string.format(
+			"<stroke color=\"#000000\" joins=\"miter\" thickness=\"2\"><b>MIN: </b>%*</stroke>",
+			math.round(self.Min)
+		)
+	end;
+
+	ShowOnePercentLow = function(self: Class, TextLabel: TextLabel)
+		TextLabel.Text = string.format(
+			"<stroke color=\"#000000\" joins=\"miter\" thickness=\"2\"><b> 1%%: </b>%* / %*</stroke>",
+			math.round(self.OnePercentLow),
+			math.round(self.OnePercentLowAverage)
+		)
+	end;
+
+	ShowPointOnePercentLow = function(self: Class, TextLabel: TextLabel)
+		TextLabel.Text = string.format(
+			"<stroke color=\"#000000\" joins=\"miter\" thickness=\"2\"><b>.1%%: </b>%* / %*</stroke>",
+			math.round(self.PointOnePercentLow),
+			math.round(self.PointOnePercentLowAverage)
+		)
+	end;
+}
+
+export type IRenderProps = MergeDefaults.IRenderProps
+
+--[=[
+	The properties used to render the information Gui.
+	@interface IRenderProps
+	.ShowFramerate boolean? -- Whether to show the current and average framerate. Defaults to `true`.
+	.ShowMax boolean? -- Whether to show the maximum framerate. Defaults to `true`.
+	.ShowMin boolean? -- Whether to show the minimum framerate. Defaults to `true`.
+	.ShowOnePercentLow boolean? -- Whether to show the 1% and average 1% framerate. Defaults to `true`.
+	.ShowPointOnePercentLow boolean? -- Whether to show the .1% and average .1% framerate. Defaults to `true`.
+	.FontFace Font? -- The font face to use. Defaults to `RobotoMono`.
+	.TextSize number? -- The text size to use. Defaults to `20`.
+	@within RoFraps
+]=]
+
+--[=[
+	Renders the information Gui.
+	@since v1.1.0
+	@param Parent Instance -- Where the Gui will be parented to.
+	@param Properties IRenderProps? -- The properties to use when rendering the Gui.
+	@return RoFraps -- Returns self.
+]=]
+function RoFraps:MountGui(Parent: Instance, Properties: IRenderProps?)
+	self:UnmountGui()
+	local TrueProperties = MergeDefaults(Properties)
+
+	local ShowFramerate = TrueProperties.ShowFramerate
+
+	local ShowMax = TrueProperties.ShowMax
+	local ShowMin = TrueProperties.ShowMin
+
+	local ShowOnePercentLow = TrueProperties.ShowOnePercentLow
+	local ShowPointOnePercentLow = TrueProperties.ShowPointOnePercentLow
+
+	local FontFace = TrueProperties.FontFace
+	local TextSize = TrueProperties.TextSize
+
+	local FrapsFrame, TextLabels =
+		CreateFrame(FontFace, TextSize, ShowFramerate, ShowMax, ShowMin, ShowOnePercentLow, ShowPointOnePercentLow)
+
+	local function OnUpdate()
+		for PropertyName, Function in UpdateTextFunctions do
+			if TrueProperties[PropertyName] == true then
+				local TextLabel = TextLabels[PropertyName]
+				if not TextLabel then
+					warn("TextLabel", PropertyName, "is missing?")
+					continue
+				end
+
+				Function(self, TextLabel)
+			end
+		end
+	end
+
+	OnUpdate()
+	FrapsFrame.Parent = Parent
+
+	local Connection = self.DataUpdated:Connect(OnUpdate)
+	function self.CleanupFunction()
+		Connection:Disconnect()
+		FrapsFrame:Destroy()
+		table.clear(TextLabels)
+	end
+
+	return self
+end
+
+--[=[
+	Cleans up the information Gui.
+	@since v1.1.0
+	@return RoFraps -- Returns self.
+]=]
+function RoFraps:UnmountGui()
+	if self.CleanupFunction then
+		self.CleanupFunction()
+		self.CleanupFunction = nil
+	end
+
+	return self
+end
+
 --[=[
 	Completely destroys RoFraps. Makes the class unusable.
 ]=]
 function RoFraps:Destroy()
-	self:Stop()
+	self:Stop():UnmountGui()
 	self.DataUpdated:Destroy()
 	table.clear(self :: any)
 	setmetatable(self :: any, nil)
@@ -259,6 +386,7 @@ function RoFraps:__tostring()
 	return "RoFraps"
 end
 
+type Class = typeof(RoFraps.new(0.5))
 export type RoFraps = {
 	ClassName: "RoFraps",
 
@@ -279,8 +407,13 @@ export type RoFraps = {
 	PointOnePercentLowAverage: number,
 
 	IsRunning: (self: RoFraps) -> boolean,
+
 	Start: (self: RoFraps) -> RoFraps,
 	Stop: (self: RoFraps) -> RoFraps,
+
+	RenderGui: (self: RoFraps, ScreenGui: ScreenGui, Properties: IRenderProps?) -> RoFraps,
+	UnmountGui: (self: RoFraps) -> RoFraps,
+
 	Destroy: (self: RoFraps) -> (),
 }
 
