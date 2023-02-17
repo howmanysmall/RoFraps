@@ -11,8 +11,8 @@ but Windows devices. The reason this is a class is for a singular state. You can
 benchmarking. It offers a way to view the current framerate on screen and measure the average, max, and min framerates by default, and with
 FRAFS you can also get the 1% and 0.1% lows. RoFraps basically offers all of these for a Roblox use-case, since you can&#x27;t run FRAPS on anything
 but Windows devices. The reason this is a class is for a singular state. You can convert it into a classless module if you want."><link data-rh="true" rel="canonical" href="https://howmanysmall.github.io/RoFraps/api/RoFraps"><link data-rh="true" rel="alternate" href="https://howmanysmall.github.io/RoFraps/api/RoFraps" hreflang="en"><link data-rh="true" rel="alternate" href="https://howmanysmall.github.io/RoFraps/api/RoFraps" hreflang="x-default"><link rel="stylesheet" href="/RoFraps/assets/css/styles.396b872c.css">
-<link rel="preload" href="/RoFraps/assets/js/runtime~main.e60e44e5.js" as="script">
-<link rel="preload" href="/RoFraps/assets/js/main.0d63ceba.js" as="script">
+<link rel="preload" href="/RoFraps/assets/js/runtime~main.b5697455.js" as="script">
+<link rel="preload" href="/RoFraps/assets/js/main.588fce26.js" as="script">
 </head>
 <body class="navigation-with-keyboard">
 <script>!function(){function e(e){document.documentElement.setAttribute("data-theme",e)}var t=function(){var e=null;try{e=localStorage.getItem("theme")}catch(e){}return e}();null!==t?e(t):window.matchMedia("(prefers-color-scheme: dark)").matches?e("dark"):(window.matchMedia("(prefers-color-scheme: light)").matches,e("light"))}()</script><div id="__docusaurus">
@@ -23,7 +23,7 @@ but Windows devices. The reason this is a class is for a singular state. You can
   FRAFS you can also get the 1% and 0.1% lows. RoFraps basically offers all of these for a Roblox use-case, since you can't run FRAPS on anything
   but Windows devices. The reason this is a class is for a singular state. You can convert it into a classless module if you want.
 </p>
-</div></header><h2 class="anchor anchorWithStickyNavbar_LWe7" id="types">Types<a class="hash-link" href="#types" title="Direct link to heading">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="IRenderProps"><code style="text-decoration:none">IRenderProps</code><a class="hash-link" href="#IRenderProps" title="Direct link to heading">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L308"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">interface</code> <code>IRenderProps<!-- --> <!-- -->{</code><div class="inset_uKQm"><div><code>ShowFramerate<!-- -->: </code><code class="blue_P4bS">boolean?</code><span class="inlineDescription_G7Er">-- <span>
+</div></header><h2 class="anchor anchorWithStickyNavbar_LWe7" id="types">Types<a class="hash-link" href="#types" title="Direct link to heading">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="IRenderProps"><code style="text-decoration:none">IRenderProps</code><a class="hash-link" href="#IRenderProps" title="Direct link to heading">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L317"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">interface</code> <code>IRenderProps<!-- --> <!-- -->{</code><div class="inset_uKQm"><div><code>ShowFramerate<!-- -->: </code><code class="blue_P4bS">boolean?</code><span class="inlineDescription_G7Er">-- <span>
 <p>Whether to show the current and average framerate. Defaults to <code>true</code>.</p>
 </span></span></div><div><code>ShowMax<!-- -->: </code><code class="blue_P4bS">boolean?</code><span class="inlineDescription_G7Er">-- <span>
 <p>Whether to show the maximum framerate. Defaults to <code>true</code>.</p>
@@ -33,10 +33,18 @@ but Windows devices. The reason this is a class is for a singular state. You can
 <p>Whether to show the 1% and average 1% framerate. Defaults to <code>true</code>.</p>
 </span></span></div><div><code>ShowPointOnePercentLow<!-- -->: </code><code class="blue_P4bS">boolean?</code><span class="inlineDescription_G7Er">-- <span>
 <p>Whether to show the .1% and average .1% framerate. Defaults to <code>true</code>.</p>
+</span></span></div><div><code>AnchorPoint<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/Vector2" target="_blank" rel="noopener noreferrer">Vector2?<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><span class="inlineDescription_G7Er">-- <span>
+<p>The anchor point to use. Defaults to <code>Vector2.yAxis</code>.</p>
 </span></span></div><div><code>FontFace<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/enum/Font" target="_blank" rel="noopener noreferrer">Font?<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><span class="inlineDescription_G7Er">-- <span>
 <p>The font face to use. Defaults to <code>RobotoMono</code>.</p>
+</span></span></div><div><code>Position<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/UDim2" target="_blank" rel="noopener noreferrer">UDim2?<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><span class="inlineDescription_G7Er">-- <span>
+<p>The position to use. Defaults to <code>UDim2.fromScale(0, 1)</code>.</p>
+</span></span></div><div><code>TextColor3<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/Color3" target="_blank" rel="noopener noreferrer">Color3?<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><span class="inlineDescription_G7Er">-- <span>
+<p>The text color to use. Defaults to <code>Color3.fromRGB(255, 239, 7)</code>.</p>
 </span></span></div><div><code>TextSize<!-- -->: </code><code class="blue_P4bS">number?</code><span class="inlineDescription_G7Er">-- <span>
 <p>The text size to use. Defaults to <code>20</code>.</p>
+</span></span></div><div><code>TextStrokeColor3<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/Color3" target="_blank" rel="noopener noreferrer">Color3?<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><span class="inlineDescription_G7Er">-- <span>
+<p>The text stroke color to use. Defaults to <code>Color3.fromRGB(0, 0, 0)</code>.</p>
 </span></span></div></div><code>}</code></div><div>
 <p>The properties used to render the information Gui.</p>
 </div><h2 class="anchor anchorWithStickyNavbar_LWe7" id="properties">Properties<a class="hash-link" href="#properties" title="Direct link to heading">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="TimeFunction"><code style="text-decoration:none">TimeFunction</code><a class="hash-link" href="#TimeFunction" title="Direct link to heading">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L26"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>RoFraps<!-- -->.<!-- -->TimeFunction<!-- -->:<!-- --> </code> <code class="purple_ieR2">(</code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="blue_P4bS">number</code></div><div>
@@ -97,7 +105,7 @@ but Windows devices. The reason this is a class is for a singular state. You can
 <p>Returns self.</p>
 </span></span></div><div>
 <p>Stops the updating connection and clears the data.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="MountGui"><code style="text-decoration:none">MountGui</code><a class="hash-link" href="#MountGui" title="Direct link to heading">​</a></h3><div class="repositoryDetailsContainer_BPdw"><span class="releaseVersion_EonW">since <!-- -->v1.1.0</span><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L316"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>RoFraps<!-- -->:</code><code class="green_DgR4">MountGui</code><code>(</code><div class="inset_uKQm"><div><code>Parent<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/Instance" target="_blank" rel="noopener noreferrer">Instance<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="MountGui"><code style="text-decoration:none">MountGui</code><a class="hash-link" href="#MountGui" title="Direct link to heading">​</a></h3><div class="repositoryDetailsContainer_BPdw"><span class="releaseVersion_EonW">since <!-- -->v1.1.0</span><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L325"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>RoFraps<!-- -->:</code><code class="green_DgR4">MountGui</code><code>(</code><div class="inset_uKQm"><div><code>Parent<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/Instance" target="_blank" rel="noopener noreferrer">Instance<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>Where the Gui will be parented to.</p>
 </span></span></div><div><code>Properties<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/RoFraps/api/RoFraps#IRenderProps">IRenderProps?</a></code><span class="inlineDescription_G7Er">-- <span>
 <p>The properties to use when rendering the Gui.</p>
@@ -105,11 +113,11 @@ but Windows devices. The reason this is a class is for a singular state. You can
 <p>Returns self.</p>
 </span></span></div><div>
 <p>Renders the information Gui.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="UnmountGui"><code style="text-decoration:none">UnmountGui</code><a class="hash-link" href="#UnmountGui" title="Direct link to heading">​</a></h3><div class="repositoryDetailsContainer_BPdw"><span class="releaseVersion_EonW">since <!-- -->v1.1.0</span><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L366"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>RoFraps<!-- -->:</code><code class="green_DgR4">UnmountGui</code><code>(</code><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/RoFraps/api/RoFraps">RoFraps</a></code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="UnmountGui"><code style="text-decoration:none">UnmountGui</code><a class="hash-link" href="#UnmountGui" title="Direct link to heading">​</a></h3><div class="repositoryDetailsContainer_BPdw"><span class="releaseVersion_EonW">since <!-- -->v1.1.0</span><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L392"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>RoFraps<!-- -->:</code><code class="green_DgR4">UnmountGui</code><code>(</code><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/RoFraps/api/RoFraps">RoFraps</a></code><span class="inlineDescription_G7Er">-- <span>
 <p>Returns self.</p>
 </span></span></div><div>
 <p>Cleans up the information Gui.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Destroy"><code style="text-decoration:none">Destroy</code><a class="hash-link" href="#Destroy" title="Direct link to heading">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L378"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>RoFraps<!-- -->:</code><code class="green_DgR4">Destroy</code><code>(</code><code>) → </code><code>(</code><code>)</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Destroy"><code style="text-decoration:none">Destroy</code><a class="hash-link" href="#Destroy" title="Direct link to heading">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L404"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>RoFraps<!-- -->:</code><code class="green_DgR4">Destroy</code><code>(</code><code>) → </code><code>(</code><code>)</code></div><div>
 <p>Completely destroys RoFraps. Makes the class unusable.</p>
 </div></div></article></div><details><summary>Show raw api</summary><pre style="max-width:100%;white-space:pre-wrap">{
     &quot;functions&quot;: [
@@ -207,7 +215,7 @@ but Windows devices. The reason this is a class is for a singular state. You can
             &quot;function_type&quot;: &quot;method&quot;,
             &quot;since&quot;: &quot;v1.1.0&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 316,
+                &quot;line&quot;: 325,
                 &quot;path&quot;: &quot;src/init.lua&quot;
             }
         },
@@ -224,7 +232,7 @@ but Windows devices. The reason this is a class is for a singular state. You can
             &quot;function_type&quot;: &quot;method&quot;,
             &quot;since&quot;: &quot;v1.1.0&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 366,
+                &quot;line&quot;: 392,
                 &quot;path&quot;: &quot;src/init.lua&quot;
             }
         },
@@ -235,7 +243,7 @@ but Windows devices. The reason this is a class is for a singular state. You can
             &quot;returns&quot;: [],
             &quot;function_type&quot;: &quot;method&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 378,
+                &quot;line&quot;: 404,
                 &quot;path&quot;: &quot;src/init.lua&quot;
             }
         }
@@ -405,18 +413,38 @@ but Windows devices. The reason this is a class is for a singular state. You can
                     &quot;desc&quot;: &quot;Whether to show the .1% and average .1% framerate. Defaults to `true`.&quot;
                 },
                 {
+                    &quot;name&quot;: &quot;AnchorPoint&quot;,
+                    &quot;lua_type&quot;: &quot;Vector2?&quot;,
+                    &quot;desc&quot;: &quot;The anchor point to use. Defaults to `Vector2.yAxis`.&quot;
+                },
+                {
                     &quot;name&quot;: &quot;FontFace&quot;,
                     &quot;lua_type&quot;: &quot;Font?&quot;,
                     &quot;desc&quot;: &quot;The font face to use. Defaults to `RobotoMono`.&quot;
                 },
                 {
+                    &quot;name&quot;: &quot;Position&quot;,
+                    &quot;lua_type&quot;: &quot;UDim2?&quot;,
+                    &quot;desc&quot;: &quot;The position to use. Defaults to `UDim2.fromScale(0, 1)`.&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;TextColor3&quot;,
+                    &quot;lua_type&quot;: &quot;Color3?&quot;,
+                    &quot;desc&quot;: &quot;The text color to use. Defaults to `Color3.fromRGB(255, 239, 7)`.&quot;
+                },
+                {
                     &quot;name&quot;: &quot;TextSize&quot;,
                     &quot;lua_type&quot;: &quot;number?&quot;,
                     &quot;desc&quot;: &quot;The text size to use. Defaults to `20`.&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;TextStrokeColor3&quot;,
+                    &quot;lua_type&quot;: &quot;Color3?&quot;,
+                    &quot;desc&quot;: &quot;The text stroke color to use. Defaults to `Color3.fromRGB(0, 0, 0)`.&quot;
                 }
             ],
             &quot;source&quot;: {
-                &quot;line&quot;: 308,
+                &quot;line&quot;: 317,
                 &quot;path&quot;: &quot;src/init.lua&quot;
             }
         }
@@ -428,7 +456,7 @@ but Windows devices. The reason this is a class is for a singular state. You can
         &quot;path&quot;: &quot;src/init.lua&quot;
     }
 }</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a><ul><li><a href="#IRenderProps" class="table-of-contents__link toc-highlight">IRenderProps</a></li></ul></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a><ul><li><a href="#DataUpdated" class="table-of-contents__link toc-highlight">DataUpdated</a></li><li><a href="#Framerate" class="table-of-contents__link toc-highlight">Framerate</a></li><li><a href="#FramerateAverage" class="table-of-contents__link toc-highlight">FramerateAverage</a></li><li><a href="#Max" class="table-of-contents__link toc-highlight">Max</a></li><li><a href="#Min" class="table-of-contents__link toc-highlight">Min</a></li><li><a href="#OnePercentLow" class="table-of-contents__link toc-highlight">OnePercentLow</a></li><li><a href="#OnePercentLowAverage" class="table-of-contents__link toc-highlight">OnePercentLowAverage</a></li><li><a href="#PointOnePercentLow" class="table-of-contents__link toc-highlight">PointOnePercentLow</a></li><li><a href="#PointOnePercentLowAverage" class="table-of-contents__link toc-highlight">PointOnePercentLowAverage</a></li><li><a href="#TimeFunction" class="table-of-contents__link toc-highlight">TimeFunction</a></li><li><a href="#UpdateRate" class="table-of-contents__link toc-highlight">UpdateRate</a></li></ul></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#Destroy" class="table-of-contents__link toc-highlight">:Destroy</a></li><li><a href="#IsRunning" class="table-of-contents__link toc-highlight">:IsRunning</a></li><li><a href="#MountGui" class="table-of-contents__link toc-highlight">:MountGui</a></li><li><a href="#Start" class="table-of-contents__link toc-highlight">:Start</a></li><li><a href="#Stop" class="table-of-contents__link toc-highlight">:Stop</a></li><li><a href="#UnmountGui" class="table-of-contents__link toc-highlight">:UnmountGui</a></li><li><a href="#new" class="table-of-contents__link toc-highlight">.new</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Built with Moonwave and Docusaurus</div></div></div></footer></div>
-<script src="/RoFraps/assets/js/runtime~main.e60e44e5.js"></script>
-<script src="/RoFraps/assets/js/main.0d63ceba.js"></script>
+<script src="/RoFraps/assets/js/runtime~main.b5697455.js"></script>
+<script src="/RoFraps/assets/js/main.588fce26.js"></script>
 </body>
 </html>
