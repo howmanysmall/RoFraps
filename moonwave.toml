@@ -29,3 +29,7 @@ description = "RoFraps calculates more than just the current FPS, it also calcul
 [[home.features]]
 title = "Accurate FPS calculation"
 description = "RoFraps uses the most accurate method of calculating FPS on Roblox."
+
+[footer]
+style = "dark"
+copyright = "Built with Moonwave and Docusaurus"
