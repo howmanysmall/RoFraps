@@ -11,8 +11,8 @@ but Windows devices. The reason this is a class is for a singular state. You can
 benchmarking. It offers a way to view the current framerate on screen and measure the average, max, and min framerates by default, and with
 FRAFS you can also get the 1% and 0.1% lows. RoFraps basically offers all of these for a Roblox use-case, since you can&#x27;t run FRAPS on anything
 but Windows devices. The reason this is a class is for a singular state. You can convert it into a classless module if you want."><link data-rh="true" rel="canonical" href="https://howmanysmall.github.io/RoFraps/api/RoFraps"><link data-rh="true" rel="alternate" href="https://howmanysmall.github.io/RoFraps/api/RoFraps" hreflang="en"><link data-rh="true" rel="alternate" href="https://howmanysmall.github.io/RoFraps/api/RoFraps" hreflang="x-default"><link rel="stylesheet" href="/RoFraps/assets/css/styles.396b872c.css">
-<link rel="preload" href="/RoFraps/assets/js/runtime~main.3e2971d4.js" as="script">
-<link rel="preload" href="/RoFraps/assets/js/main.4f0af7be.js" as="script">
+<link rel="preload" href="/RoFraps/assets/js/runtime~main.b86292cd.js" as="script">
+<link rel="preload" href="/RoFraps/assets/js/main.11331317.js" as="script">
 </head>
 <body class="navigation-with-keyboard">
 <script>!function(){function e(e){document.documentElement.setAttribute("data-theme",e)}var t=function(){var e=null;try{e=localStorage.getItem("theme")}catch(e){}return e}();null!==t?e(t):window.matchMedia("(prefers-color-scheme: dark)").matches?e("dark"):(window.matchMedia("(prefers-color-scheme: light)").matches,e("light"))}()</script><div id="__docusaurus">
@@ -23,15 +23,31 @@ but Windows devices. The reason this is a class is for a singular state. You can
   FRAFS you can also get the 1% and 0.1% lows. RoFraps basically offers all of these for a Roblox use-case, since you can't run FRAPS on anything
   but Windows devices. The reason this is a class is for a singular state. You can convert it into a classless module if you want.
 </p>
-</div></header><h2 class="anchor anchorWithStickyNavbar_LWe7" id="properties">Properties<a class="hash-link" href="#properties" title="Direct link to heading">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="TimeFunction"><code style="text-decoration:none">TimeFunction</code><a class="hash-link" href="#TimeFunction" title="Direct link to heading">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L23"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>RoFraps<!-- -->.<!-- -->TimeFunction<!-- -->:<!-- --> </code> <code class="purple_ieR2">(</code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="blue_P4bS">number</code></div><div>
+</div></header><h2 class="anchor anchorWithStickyNavbar_LWe7" id="types">Types<a class="hash-link" href="#types" title="Direct link to heading">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="IRenderProps"><code style="text-decoration:none">IRenderProps</code><a class="hash-link" href="#IRenderProps" title="Direct link to heading">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L308"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">interface</code> <code>IRenderProps<!-- --> <!-- -->{</code><div class="inset_uKQm"><div><code>ShowFramerate<!-- -->: </code><code class="blue_P4bS">boolean?</code><span class="inlineDescription_G7Er">-- <span>
+<p>Whether to show the current and average framerate. Defaults to <code>true</code>.</p>
+</span></span></div><div><code>ShowMax<!-- -->: </code><code class="blue_P4bS">boolean?</code><span class="inlineDescription_G7Er">-- <span>
+<p>Whether to show the maximum framerate. Defaults to <code>true</code>.</p>
+</span></span></div><div><code>ShowMin<!-- -->: </code><code class="blue_P4bS">boolean?</code><span class="inlineDescription_G7Er">-- <span>
+<p>Whether to show the minimum framerate. Defaults to <code>true</code>.</p>
+</span></span></div><div><code>ShowOnePercentLow<!-- -->: </code><code class="blue_P4bS">boolean?</code><span class="inlineDescription_G7Er">-- <span>
+<p>Whether to show the 1% and average 1% framerate. Defaults to <code>true</code>.</p>
+</span></span></div><div><code>ShowPointOnePercentLow<!-- -->: </code><code class="blue_P4bS">boolean?</code><span class="inlineDescription_G7Er">-- <span>
+<p>Whether to show the .1% and average .1% framerate. Defaults to <code>true</code>.</p>
+</span></span></div><div><code>FontFace<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/enum/Font" target="_blank" rel="noopener noreferrer">Font?<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><span class="inlineDescription_G7Er">-- <span>
+<p>The font face to use. Defaults to <code>RobotoMono</code>.</p>
+</span></span></div><div><code>TextSize<!-- -->: </code><code class="blue_P4bS">number?</code><span class="inlineDescription_G7Er">-- <span>
+<p>The text size to use. Defaults to <code>20</code>.</p>
+</span></span></div></div><code>}</code></div><div>
+<p>The properties used to render the information Gui.</p>
+</div><h2 class="anchor anchorWithStickyNavbar_LWe7" id="properties">Properties<a class="hash-link" href="#properties" title="Direct link to heading">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="TimeFunction"><code style="text-decoration:none">TimeFunction</code><a class="hash-link" href="#TimeFunction" title="Direct link to heading">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L26"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>RoFraps<!-- -->.<!-- -->TimeFunction<!-- -->:<!-- --> </code> <code class="purple_ieR2">(</code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="blue_P4bS">number</code></div><div>
 <p>What function is used for timing. Defaults to <code>os.clock</code>.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="UpdateRate"><code style="text-decoration:none">UpdateRate</code><a class="hash-link" href="#UpdateRate" title="Direct link to heading">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L29"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>RoFraps<!-- -->.<!-- -->UpdateRate<!-- -->:<!-- --> </code> <code class="blue_P4bS">number</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="UpdateRate"><code style="text-decoration:none">UpdateRate</code><a class="hash-link" href="#UpdateRate" title="Direct link to heading">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L32"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>RoFraps<!-- -->.<!-- -->UpdateRate<!-- -->:<!-- --> </code> <code class="blue_P4bS">number</code></div><div>
 <p>How often the statistics are updated.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Framerate"><code style="text-decoration:none">Framerate</code><a class="hash-link" href="#Framerate" title="Direct link to heading">​</a></h3><span class="badge_Ba2I" style="color:#e74c3c"><span class="badgeTooltip_cWXP">This item is read only and cannot be modified.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" height="300px" width="300px" fill="#e74c3c" x="0px" y="0px" viewBox="0 0 96 96"><path d="M70.354,15.662h-7.496H25.566c-3.282,0-5.19-0.776-5.728-1.169v-1.456c0.538-0.393,2.445-1.168,5.728-1.168h46.479V8H25.566  c-4.776,0-9.594,1.468-9.594,4.747v61.458C15.972,86.645,20.328,88,37.495,88h42.535V15.662H70.354z"></path></svg> <!-- -->Read Only</span></span><span class="docTag__6UZ" style="border-color:#dc0073;color:#dc0073">Data</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L37"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>RoFraps<!-- -->.<!-- -->Framerate<!-- -->:<!-- --> </code> <code class="blue_P4bS">number</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Framerate"><code style="text-decoration:none">Framerate</code><a class="hash-link" href="#Framerate" title="Direct link to heading">​</a></h3><span class="badge_Ba2I" style="color:#e74c3c"><span class="badgeTooltip_cWXP">This item is read only and cannot be modified.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" height="300px" width="300px" fill="#e74c3c" x="0px" y="0px" viewBox="0 0 96 96"><path d="M70.354,15.662h-7.496H25.566c-3.282,0-5.19-0.776-5.728-1.169v-1.456c0.538-0.393,2.445-1.168,5.728-1.168h46.479V8H25.566  c-4.776,0-9.594,1.468-9.594,4.747v61.458C15.972,86.645,20.328,88,37.495,88h42.535V15.662H70.354z"></path></svg> <!-- -->Read Only</span></span><span class="docTag__6UZ" style="border-color:#dc0073;color:#dc0073">Data</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L40"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>RoFraps<!-- -->.<!-- -->Framerate<!-- -->:<!-- --> </code> <code class="blue_P4bS">number</code></div><div>
 <p>The current framerate. This is updated every frame.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="FramerateAverage"><code style="text-decoration:none">FramerateAverage</code><a class="hash-link" href="#FramerateAverage" title="Direct link to heading">​</a></h3><span class="badge_Ba2I" style="color:#e74c3c"><span class="badgeTooltip_cWXP">This item is read only and cannot be modified.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" height="300px" width="300px" fill="#e74c3c" x="0px" y="0px" viewBox="0 0 96 96"><path d="M70.354,15.662h-7.496H25.566c-3.282,0-5.19-0.776-5.728-1.169v-1.456c0.538-0.393,2.445-1.168,5.728-1.168h46.479V8H25.566  c-4.776,0-9.594,1.468-9.594,4.747v61.458C15.972,86.645,20.328,88,37.495,88h42.535V15.662H70.354z"></path></svg> <!-- -->Read Only</span></span><span class="docTag__6UZ" style="border-color:#dc0073;color:#dc0073">Data</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L45"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>RoFraps<!-- -->.<!-- -->FramerateAverage<!-- -->:<!-- --> </code> <code class="blue_P4bS">number</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="FramerateAverage"><code style="text-decoration:none">FramerateAverage</code><a class="hash-link" href="#FramerateAverage" title="Direct link to heading">​</a></h3><span class="badge_Ba2I" style="color:#e74c3c"><span class="badgeTooltip_cWXP">This item is read only and cannot be modified.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" height="300px" width="300px" fill="#e74c3c" x="0px" y="0px" viewBox="0 0 96 96"><path d="M70.354,15.662h-7.496H25.566c-3.282,0-5.19-0.776-5.728-1.169v-1.456c0.538-0.393,2.445-1.168,5.728-1.168h46.479V8H25.566  c-4.776,0-9.594,1.468-9.594,4.747v61.458C15.972,86.645,20.328,88,37.495,88h42.535V15.662H70.354z"></path></svg> <!-- -->Read Only</span></span><span class="docTag__6UZ" style="border-color:#dc0073;color:#dc0073">Data</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L48"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>RoFraps<!-- -->.<!-- -->FramerateAverage<!-- -->:<!-- --> </code> <code class="blue_P4bS">number</code></div><div>
 <p>The average framerate.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Max"><code style="text-decoration:none">Max</code><a class="hash-link" href="#Max" title="Direct link to heading">​</a></h3><span class="badge_Ba2I" style="color:#e74c3c"><span class="badgeTooltip_cWXP">This item is read only and cannot be modified.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" height="300px" width="300px" fill="#e74c3c" x="0px" y="0px" viewBox="0 0 96 96"><path d="M70.354,15.662h-7.496H25.566c-3.282,0-5.19-0.776-5.728-1.169v-1.456c0.538-0.393,2.445-1.168,5.728-1.168h46.479V8H25.566  c-4.776,0-9.594,1.468-9.594,4.747v61.458C15.972,86.645,20.328,88,37.495,88h42.535V15.662H70.354z"></path></svg> <!-- -->Read Only</span></span><span class="docTag__6UZ" style="border-color:#dc0073;color:#dc0073">Data</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L58"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>RoFraps<!-- -->.<!-- -->Max<!-- -->:<!-- --> </code> <code class="blue_P4bS">number</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Max"><code style="text-decoration:none">Max</code><a class="hash-link" href="#Max" title="Direct link to heading">​</a></h3><span class="badge_Ba2I" style="color:#e74c3c"><span class="badgeTooltip_cWXP">This item is read only and cannot be modified.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" height="300px" width="300px" fill="#e74c3c" x="0px" y="0px" viewBox="0 0 96 96"><path d="M70.354,15.662h-7.496H25.566c-3.282,0-5.19-0.776-5.728-1.169v-1.456c0.538-0.393,2.445-1.168,5.728-1.168h46.479V8H25.566  c-4.776,0-9.594,1.468-9.594,4.747v61.458C15.972,86.645,20.328,88,37.495,88h42.535V15.662H70.354z"></path></svg> <!-- -->Read Only</span></span><span class="docTag__6UZ" style="border-color:#dc0073;color:#dc0073">Data</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L61"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>RoFraps<!-- -->.<!-- -->Max<!-- -->:<!-- --> </code> <code class="blue_P4bS">number</code></div><div>
 <p>The max framerate. This is updated every frame.</p>
 <div class="admonition admonition-info alert alert--info">
   <div class="admonition-heading">
@@ -43,7 +59,7 @@ but Windows devices. The reason this is a class is for a singular state. You can
     <p>You should probably be using the 1% and 0.1% lows instead of this.</p>
   </div>
 </div>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Min"><code style="text-decoration:none">Min</code><a class="hash-link" href="#Min" title="Direct link to heading">​</a></h3><span class="badge_Ba2I" style="color:#e74c3c"><span class="badgeTooltip_cWXP">This item is read only and cannot be modified.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" height="300px" width="300px" fill="#e74c3c" x="0px" y="0px" viewBox="0 0 96 96"><path d="M70.354,15.662h-7.496H25.566c-3.282,0-5.19-0.776-5.728-1.169v-1.456c0.538-0.393,2.445-1.168,5.728-1.168h46.479V8H25.566  c-4.776,0-9.594,1.468-9.594,4.747v61.458C15.972,86.645,20.328,88,37.495,88h42.535V15.662H70.354z"></path></svg> <!-- -->Read Only</span></span><span class="docTag__6UZ" style="border-color:#dc0073;color:#dc0073">Data</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L71"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>RoFraps<!-- -->.<!-- -->Min<!-- -->:<!-- --> </code> <code class="blue_P4bS">number</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Min"><code style="text-decoration:none">Min</code><a class="hash-link" href="#Min" title="Direct link to heading">​</a></h3><span class="badge_Ba2I" style="color:#e74c3c"><span class="badgeTooltip_cWXP">This item is read only and cannot be modified.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" height="300px" width="300px" fill="#e74c3c" x="0px" y="0px" viewBox="0 0 96 96"><path d="M70.354,15.662h-7.496H25.566c-3.282,0-5.19-0.776-5.728-1.169v-1.456c0.538-0.393,2.445-1.168,5.728-1.168h46.479V8H25.566  c-4.776,0-9.594,1.468-9.594,4.747v61.458C15.972,86.645,20.328,88,37.495,88h42.535V15.662H70.354z"></path></svg> <!-- -->Read Only</span></span><span class="docTag__6UZ" style="border-color:#dc0073;color:#dc0073">Data</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L74"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>RoFraps<!-- -->.<!-- -->Min<!-- -->:<!-- --> </code> <code class="blue_P4bS">number</code></div><div>
 <p>The min framerate. This is updated every frame.</p>
 <div class="admonition admonition-info alert alert--info">
   <div class="admonition-heading">
@@ -55,33 +71,45 @@ but Windows devices. The reason this is a class is for a singular state. You can
     <p>You should probably be using the 1% and 0.1% lows instead of this.</p>
   </div>
 </div>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="OnePercentLow"><code style="text-decoration:none">OnePercentLow</code><a class="hash-link" href="#OnePercentLow" title="Direct link to heading">​</a></h3><span class="badge_Ba2I" style="color:#e74c3c"><span class="badgeTooltip_cWXP">This item is read only and cannot be modified.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" height="300px" width="300px" fill="#e74c3c" x="0px" y="0px" viewBox="0 0 96 96"><path d="M70.354,15.662h-7.496H25.566c-3.282,0-5.19-0.776-5.728-1.169v-1.456c0.538-0.393,2.445-1.168,5.728-1.168h46.479V8H25.566  c-4.776,0-9.594,1.468-9.594,4.747v61.458C15.972,86.645,20.328,88,37.495,88h42.535V15.662H70.354z"></path></svg> <!-- -->Read Only</span></span><span class="docTag__6UZ" style="border-color:#dc0073;color:#dc0073">Data</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L79"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>RoFraps<!-- -->.<!-- -->OnePercentLow<!-- -->:<!-- --> </code> <code class="blue_P4bS">number</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="OnePercentLow"><code style="text-decoration:none">OnePercentLow</code><a class="hash-link" href="#OnePercentLow" title="Direct link to heading">​</a></h3><span class="badge_Ba2I" style="color:#e74c3c"><span class="badgeTooltip_cWXP">This item is read only and cannot be modified.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" height="300px" width="300px" fill="#e74c3c" x="0px" y="0px" viewBox="0 0 96 96"><path d="M70.354,15.662h-7.496H25.566c-3.282,0-5.19-0.776-5.728-1.169v-1.456c0.538-0.393,2.445-1.168,5.728-1.168h46.479V8H25.566  c-4.776,0-9.594,1.468-9.594,4.747v61.458C15.972,86.645,20.328,88,37.495,88h42.535V15.662H70.354z"></path></svg> <!-- -->Read Only</span></span><span class="docTag__6UZ" style="border-color:#dc0073;color:#dc0073">Data</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L82"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>RoFraps<!-- -->.<!-- -->OnePercentLow<!-- -->:<!-- --> </code> <code class="blue_P4bS">number</code></div><div>
 <p>The 1% low.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="OnePercentLowAverage"><code style="text-decoration:none">OnePercentLowAverage</code><a class="hash-link" href="#OnePercentLowAverage" title="Direct link to heading">​</a></h3><span class="badge_Ba2I" style="color:#e74c3c"><span class="badgeTooltip_cWXP">This item is read only and cannot be modified.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" height="300px" width="300px" fill="#e74c3c" x="0px" y="0px" viewBox="0 0 96 96"><path d="M70.354,15.662h-7.496H25.566c-3.282,0-5.19-0.776-5.728-1.169v-1.456c0.538-0.393,2.445-1.168,5.728-1.168h46.479V8H25.566  c-4.776,0-9.594,1.468-9.594,4.747v61.458C15.972,86.645,20.328,88,37.495,88h42.535V15.662H70.354z"></path></svg> <!-- -->Read Only</span></span><span class="docTag__6UZ" style="border-color:#dc0073;color:#dc0073">Data</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L87"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>RoFraps<!-- -->.<!-- -->OnePercentLowAverage<!-- -->:<!-- --> </code> <code class="blue_P4bS">number</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="OnePercentLowAverage"><code style="text-decoration:none">OnePercentLowAverage</code><a class="hash-link" href="#OnePercentLowAverage" title="Direct link to heading">​</a></h3><span class="badge_Ba2I" style="color:#e74c3c"><span class="badgeTooltip_cWXP">This item is read only and cannot be modified.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" height="300px" width="300px" fill="#e74c3c" x="0px" y="0px" viewBox="0 0 96 96"><path d="M70.354,15.662h-7.496H25.566c-3.282,0-5.19-0.776-5.728-1.169v-1.456c0.538-0.393,2.445-1.168,5.728-1.168h46.479V8H25.566  c-4.776,0-9.594,1.468-9.594,4.747v61.458C15.972,86.645,20.328,88,37.495,88h42.535V15.662H70.354z"></path></svg> <!-- -->Read Only</span></span><span class="docTag__6UZ" style="border-color:#dc0073;color:#dc0073">Data</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L90"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>RoFraps<!-- -->.<!-- -->OnePercentLowAverage<!-- -->:<!-- --> </code> <code class="blue_P4bS">number</code></div><div>
 <p>The 1% low calculated from the average framerate.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="PointOnePercentLow"><code style="text-decoration:none">PointOnePercentLow</code><a class="hash-link" href="#PointOnePercentLow" title="Direct link to heading">​</a></h3><span class="badge_Ba2I" style="color:#e74c3c"><span class="badgeTooltip_cWXP">This item is read only and cannot be modified.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" height="300px" width="300px" fill="#e74c3c" x="0px" y="0px" viewBox="0 0 96 96"><path d="M70.354,15.662h-7.496H25.566c-3.282,0-5.19-0.776-5.728-1.169v-1.456c0.538-0.393,2.445-1.168,5.728-1.168h46.479V8H25.566  c-4.776,0-9.594,1.468-9.594,4.747v61.458C15.972,86.645,20.328,88,37.495,88h42.535V15.662H70.354z"></path></svg> <!-- -->Read Only</span></span><span class="docTag__6UZ" style="border-color:#dc0073;color:#dc0073">Data</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L95"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>RoFraps<!-- -->.<!-- -->PointOnePercentLow<!-- -->:<!-- --> </code> <code class="blue_P4bS">number</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="PointOnePercentLow"><code style="text-decoration:none">PointOnePercentLow</code><a class="hash-link" href="#PointOnePercentLow" title="Direct link to heading">​</a></h3><span class="badge_Ba2I" style="color:#e74c3c"><span class="badgeTooltip_cWXP">This item is read only and cannot be modified.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" height="300px" width="300px" fill="#e74c3c" x="0px" y="0px" viewBox="0 0 96 96"><path d="M70.354,15.662h-7.496H25.566c-3.282,0-5.19-0.776-5.728-1.169v-1.456c0.538-0.393,2.445-1.168,5.728-1.168h46.479V8H25.566  c-4.776,0-9.594,1.468-9.594,4.747v61.458C15.972,86.645,20.328,88,37.495,88h42.535V15.662H70.354z"></path></svg> <!-- -->Read Only</span></span><span class="docTag__6UZ" style="border-color:#dc0073;color:#dc0073">Data</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L98"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>RoFraps<!-- -->.<!-- -->PointOnePercentLow<!-- -->:<!-- --> </code> <code class="blue_P4bS">number</code></div><div>
 <p>The 0.1% low.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="PointOnePercentLowAverage"><code style="text-decoration:none">PointOnePercentLowAverage</code><a class="hash-link" href="#PointOnePercentLowAverage" title="Direct link to heading">​</a></h3><span class="badge_Ba2I" style="color:#e74c3c"><span class="badgeTooltip_cWXP">This item is read only and cannot be modified.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" height="300px" width="300px" fill="#e74c3c" x="0px" y="0px" viewBox="0 0 96 96"><path d="M70.354,15.662h-7.496H25.566c-3.282,0-5.19-0.776-5.728-1.169v-1.456c0.538-0.393,2.445-1.168,5.728-1.168h46.479V8H25.566  c-4.776,0-9.594,1.468-9.594,4.747v61.458C15.972,86.645,20.328,88,37.495,88h42.535V15.662H70.354z"></path></svg> <!-- -->Read Only</span></span><span class="docTag__6UZ" style="border-color:#dc0073;color:#dc0073">Data</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L103"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>RoFraps<!-- -->.<!-- -->PointOnePercentLowAverage<!-- -->:<!-- --> </code> <code class="blue_P4bS">number</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="PointOnePercentLowAverage"><code style="text-decoration:none">PointOnePercentLowAverage</code><a class="hash-link" href="#PointOnePercentLowAverage" title="Direct link to heading">​</a></h3><span class="badge_Ba2I" style="color:#e74c3c"><span class="badgeTooltip_cWXP">This item is read only and cannot be modified.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" height="300px" width="300px" fill="#e74c3c" x="0px" y="0px" viewBox="0 0 96 96"><path d="M70.354,15.662h-7.496H25.566c-3.282,0-5.19-0.776-5.728-1.169v-1.456c0.538-0.393,2.445-1.168,5.728-1.168h46.479V8H25.566  c-4.776,0-9.594,1.468-9.594,4.747v61.458C15.972,86.645,20.328,88,37.495,88h42.535V15.662H70.354z"></path></svg> <!-- -->Read Only</span></span><span class="docTag__6UZ" style="border-color:#dc0073;color:#dc0073">Data</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L106"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>RoFraps<!-- -->.<!-- -->PointOnePercentLowAverage<!-- -->:<!-- --> </code> <code class="blue_P4bS">number</code></div><div>
 <p>The 0.1% low calculated from the average framerate.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="DataUpdated"><code style="text-decoration:none">DataUpdated</code><a class="hash-link" href="#DataUpdated" title="Direct link to heading">​</a></h3><span class="badge_Ba2I" style="color:#e74c3c"><span class="badgeTooltip_cWXP">This item is read only and cannot be modified.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" height="300px" width="300px" fill="#e74c3c" x="0px" y="0px" viewBox="0 0 96 96"><path d="M70.354,15.662h-7.496H25.566c-3.282,0-5.19-0.776-5.728-1.169v-1.456c0.538-0.393,2.445-1.168,5.728-1.168h46.479V8H25.566  c-4.776,0-9.594,1.468-9.594,4.747v61.458C15.972,86.645,20.328,88,37.495,88h42.535V15.662H70.354z"></path></svg> <!-- -->Read Only</span></span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L110"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>RoFraps<!-- -->.<!-- -->DataUpdated<!-- -->:<!-- --> </code> <code class="blue_P4bS">Signal</code><code class="op_lSLc">&lt;</code><code class="op_lSLc">&gt;</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="DataUpdated"><code style="text-decoration:none">DataUpdated</code><a class="hash-link" href="#DataUpdated" title="Direct link to heading">​</a></h3><span class="badge_Ba2I" style="color:#e74c3c"><span class="badgeTooltip_cWXP">This item is read only and cannot be modified.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" height="300px" width="300px" fill="#e74c3c" x="0px" y="0px" viewBox="0 0 96 96"><path d="M70.354,15.662h-7.496H25.566c-3.282,0-5.19-0.776-5.728-1.169v-1.456c0.538-0.393,2.445-1.168,5.728-1.168h46.479V8H25.566  c-4.776,0-9.594,1.468-9.594,4.747v61.458C15.972,86.645,20.328,88,37.495,88h42.535V15.662H70.354z"></path></svg> <!-- -->Read Only</span></span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L113"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>RoFraps<!-- -->.<!-- -->DataUpdated<!-- -->:<!-- --> </code> <code class="blue_P4bS">Signal</code><code class="op_lSLc">&lt;</code><code class="op_lSLc">&gt;</code></div><div>
 <p>A signal that is fired when RoFraps is updated.</p>
-</div><h2 class="anchor anchorWithStickyNavbar_LWe7" id="functions">Functions<a class="hash-link" href="#functions" title="Direct link to heading">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="new"><code style="text-decoration:none">new</code><a class="hash-link" href="#new" title="Direct link to heading">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L116"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>RoFraps<!-- -->.</code><code class="green_DgR4">new</code><code>(</code><div class="inset_uKQm"><div><code>UpdateRate<!-- -->: </code><code class="blue_P4bS">number?</code><span class="inlineDescription_G7Er">-- <span>
+</div><h2 class="anchor anchorWithStickyNavbar_LWe7" id="functions">Functions<a class="hash-link" href="#functions" title="Direct link to heading">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="new"><code style="text-decoration:none">new</code><a class="hash-link" href="#new" title="Direct link to heading">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L119"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>RoFraps<!-- -->.</code><code class="green_DgR4">new</code><code>(</code><div class="inset_uKQm"><div><code>UpdateRate<!-- -->: </code><code class="blue_P4bS">number?</code><span class="inlineDescription_G7Er">-- <span>
 <p>How often the statistics are updated. Defaults to <code>0.5</code>.</p>
 </span></span></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/RoFraps/api/RoFraps">RoFraps</a></code></div><div>
 <p>Creates a new RoFraps Instance.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="IsRunning"><code style="text-decoration:none">IsRunning</code><a class="hash-link" href="#IsRunning" title="Direct link to heading">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L146"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>RoFraps<!-- -->:</code><code class="green_DgR4">IsRunning</code><code>(</code><code>) → </code><code class="blue_P4bS">boolean</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="IsRunning"><code style="text-decoration:none">IsRunning</code><a class="hash-link" href="#IsRunning" title="Direct link to heading">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L152"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>RoFraps<!-- -->:</code><code class="green_DgR4">IsRunning</code><code>(</code><code>) → </code><code class="blue_P4bS">boolean</code><span class="inlineDescription_G7Er">-- <span>
 <p>True if the connection exists and is connected.</p>
 </span></span></div><div>
 <p>Returns whether not the RoFraps instance is running.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Start"><code style="text-decoration:none">Start</code><a class="hash-link" href="#Start" title="Direct link to heading">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L155"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>RoFraps<!-- -->:</code><code class="green_DgR4">Start</code><code>(</code><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/RoFraps/api/RoFraps">RoFraps</a></code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Start"><code style="text-decoration:none">Start</code><a class="hash-link" href="#Start" title="Direct link to heading">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L161"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>RoFraps<!-- -->:</code><code class="green_DgR4">Start</code><code>(</code><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/RoFraps/api/RoFraps">RoFraps</a></code><span class="inlineDescription_G7Er">-- <span>
 <p>Returns self.</p>
 </span></span></div><div>
 <p>Starts the connection that updates RoFraps.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Stop"><code style="text-decoration:none">Stop</code><a class="hash-link" href="#Stop" title="Direct link to heading">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L221"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>RoFraps<!-- -->:</code><code class="green_DgR4">Stop</code><code>(</code><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/RoFraps/api/RoFraps">RoFraps</a></code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Stop"><code style="text-decoration:none">Stop</code><a class="hash-link" href="#Stop" title="Direct link to heading">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L227"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>RoFraps<!-- -->:</code><code class="green_DgR4">Stop</code><code>(</code><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/RoFraps/api/RoFraps">RoFraps</a></code><span class="inlineDescription_G7Er">-- <span>
 <p>Returns self.</p>
 </span></span></div><div>
 <p>Stops the updating connection and clears the data.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Destroy"><code style="text-decoration:none">Destroy</code><a class="hash-link" href="#Destroy" title="Direct link to heading">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L251"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>RoFraps<!-- -->:</code><code class="green_DgR4">Destroy</code><code>(</code><code>) → </code><code>(</code><code>)</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="MountGui"><code style="text-decoration:none">MountGui</code><a class="hash-link" href="#MountGui" title="Direct link to heading">​</a></h3><div class="repositoryDetailsContainer_BPdw"><span class="releaseVersion_EonW">since <!-- -->v1.1.0</span><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L316"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>RoFraps<!-- -->:</code><code class="green_DgR4">MountGui</code><code>(</code><div class="inset_uKQm"><div><code>Parent<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/Instance" target="_blank" rel="noopener noreferrer">Instance<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>Where the Gui will be parented to.</p>
+</span></span></div><div><code>Properties<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/RoFraps/api/RoFraps#IRenderProps">IRenderProps?</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>The properties to use when rendering the Gui.</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/RoFraps/api/RoFraps">RoFraps</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>Returns self.</p>
+</span></span></div><div>
+<p>Renders the information Gui.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="UnmountGui"><code style="text-decoration:none">UnmountGui</code><a class="hash-link" href="#UnmountGui" title="Direct link to heading">​</a></h3><div class="repositoryDetailsContainer_BPdw"><span class="releaseVersion_EonW">since <!-- -->v1.1.0</span><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L366"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>RoFraps<!-- -->:</code><code class="green_DgR4">UnmountGui</code><code>(</code><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/RoFraps/api/RoFraps">RoFraps</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>Returns self.</p>
+</span></span></div><div>
+<p>Cleans up the information Gui.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Destroy"><code style="text-decoration:none">Destroy</code><a class="hash-link" href="#Destroy" title="Direct link to heading">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/howmanysmall/RoFraps/blob/main/src/init.lua#L378"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>RoFraps<!-- -->:</code><code class="green_DgR4">Destroy</code><code>(</code><code>) → </code><code>(</code><code>)</code></div><div>
 <p>Completely destroys RoFraps. Makes the class unusable.</p>
 </div></div></article></div><details><summary>Show raw api</summary><pre style="max-width:100%;white-space:pre-wrap">{
     &quot;functions&quot;: [
@@ -103,7 +131,7 @@ but Windows devices. The reason this is a class is for a singular state. You can
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 116,
+                &quot;line&quot;: 119,
                 &quot;path&quot;: &quot;src/init.lua&quot;
             }
         },
@@ -119,7 +147,7 @@ but Windows devices. The reason this is a class is for a singular state. You can
             ],
             &quot;function_type&quot;: &quot;method&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 146,
+                &quot;line&quot;: 152,
                 &quot;path&quot;: &quot;src/init.lua&quot;
             }
         },
@@ -135,7 +163,7 @@ but Windows devices. The reason this is a class is for a singular state. You can
             ],
             &quot;function_type&quot;: &quot;method&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 155,
+                &quot;line&quot;: 161,
                 &quot;path&quot;: &quot;src/init.lua&quot;
             }
         },
@@ -151,7 +179,52 @@ but Windows devices. The reason this is a class is for a singular state. You can
             ],
             &quot;function_type&quot;: &quot;method&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 221,
+                &quot;line&quot;: 227,
+                &quot;path&quot;: &quot;src/init.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;MountGui&quot;,
+            &quot;desc&quot;: &quot;Renders the information Gui.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;Parent&quot;,
+                    &quot;desc&quot;: &quot;Where the Gui will be parented to.&quot;,
+                    &quot;lua_type&quot;: &quot;Instance&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;Properties&quot;,
+                    &quot;desc&quot;: &quot;The properties to use when rendering the Gui.&quot;,
+                    &quot;lua_type&quot;: &quot;IRenderProps?&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;Returns self.&quot;,
+                    &quot;lua_type&quot;: &quot;RoFraps&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;since&quot;: &quot;v1.1.0&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 316,
+                &quot;path&quot;: &quot;src/init.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;UnmountGui&quot;,
+            &quot;desc&quot;: &quot;Cleans up the information Gui.&quot;,
+            &quot;params&quot;: [],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;Returns self.&quot;,
+                    &quot;lua_type&quot;: &quot;RoFraps&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;since&quot;: &quot;v1.1.0&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 366,
                 &quot;path&quot;: &quot;src/init.lua&quot;
             }
         },
@@ -162,7 +235,7 @@ but Windows devices. The reason this is a class is for a singular state. You can
             &quot;returns&quot;: [],
             &quot;function_type&quot;: &quot;method&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 251,
+                &quot;line&quot;: 378,
                 &quot;path&quot;: &quot;src/init.lua&quot;
             }
         }
@@ -173,7 +246,7 @@ but Windows devices. The reason this is a class is for a singular state. You can
             &quot;desc&quot;: &quot;What function is used for timing. Defaults to `os.clock`.&quot;,
             &quot;lua_type&quot;: &quot;() -&gt; number&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 23,
+                &quot;line&quot;: 26,
                 &quot;path&quot;: &quot;src/init.lua&quot;
             }
         },
@@ -182,7 +255,7 @@ but Windows devices. The reason this is a class is for a singular state. You can
             &quot;desc&quot;: &quot;How often the statistics are updated.&quot;,
             &quot;lua_type&quot;: &quot;number&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 29,
+                &quot;line&quot;: 32,
                 &quot;path&quot;: &quot;src/init.lua&quot;
             }
         },
@@ -195,7 +268,7 @@ but Windows devices. The reason this is a class is for a singular state. You can
             ],
             &quot;readonly&quot;: true,
             &quot;source&quot;: {
-                &quot;line&quot;: 37,
+                &quot;line&quot;: 40,
                 &quot;path&quot;: &quot;src/init.lua&quot;
             }
         },
@@ -208,7 +281,7 @@ but Windows devices. The reason this is a class is for a singular state. You can
             ],
             &quot;readonly&quot;: true,
             &quot;source&quot;: {
-                &quot;line&quot;: 45,
+                &quot;line&quot;: 48,
                 &quot;path&quot;: &quot;src/init.lua&quot;
             }
         },
@@ -221,7 +294,7 @@ but Windows devices. The reason this is a class is for a singular state. You can
             ],
             &quot;readonly&quot;: true,
             &quot;source&quot;: {
-                &quot;line&quot;: 58,
+                &quot;line&quot;: 61,
                 &quot;path&quot;: &quot;src/init.lua&quot;
             }
         },
@@ -234,7 +307,7 @@ but Windows devices. The reason this is a class is for a singular state. You can
             ],
             &quot;readonly&quot;: true,
             &quot;source&quot;: {
-                &quot;line&quot;: 71,
+                &quot;line&quot;: 74,
                 &quot;path&quot;: &quot;src/init.lua&quot;
             }
         },
@@ -247,7 +320,7 @@ but Windows devices. The reason this is a class is for a singular state. You can
             ],
             &quot;readonly&quot;: true,
             &quot;source&quot;: {
-                &quot;line&quot;: 79,
+                &quot;line&quot;: 82,
                 &quot;path&quot;: &quot;src/init.lua&quot;
             }
         },
@@ -260,7 +333,7 @@ but Windows devices. The reason this is a class is for a singular state. You can
             ],
             &quot;readonly&quot;: true,
             &quot;source&quot;: {
-                &quot;line&quot;: 87,
+                &quot;line&quot;: 90,
                 &quot;path&quot;: &quot;src/init.lua&quot;
             }
         },
@@ -273,7 +346,7 @@ but Windows devices. The reason this is a class is for a singular state. You can
             ],
             &quot;readonly&quot;: true,
             &quot;source&quot;: {
-                &quot;line&quot;: 95,
+                &quot;line&quot;: 98,
                 &quot;path&quot;: &quot;src/init.lua&quot;
             }
         },
@@ -286,7 +359,7 @@ but Windows devices. The reason this is a class is for a singular state. You can
             ],
             &quot;readonly&quot;: true,
             &quot;source&quot;: {
-                &quot;line&quot;: 103,
+                &quot;line&quot;: 106,
                 &quot;path&quot;: &quot;src/init.lua&quot;
             }
         },
@@ -296,20 +369,66 @@ but Windows devices. The reason this is a class is for a singular state. You can
             &quot;lua_type&quot;: &quot;Signal&lt;&gt;&quot;,
             &quot;readonly&quot;: true,
             &quot;source&quot;: {
-                &quot;line&quot;: 110,
+                &quot;line&quot;: 113,
                 &quot;path&quot;: &quot;src/init.lua&quot;
             }
         }
     ],
-    &quot;types&quot;: [],
+    &quot;types&quot;: [
+        {
+            &quot;name&quot;: &quot;IRenderProps&quot;,
+            &quot;desc&quot;: &quot;The properties used to render the information Gui.&quot;,
+            &quot;fields&quot;: [
+                {
+                    &quot;name&quot;: &quot;ShowFramerate&quot;,
+                    &quot;lua_type&quot;: &quot;boolean?&quot;,
+                    &quot;desc&quot;: &quot;Whether to show the current and average framerate. Defaults to `true`.&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;ShowMax&quot;,
+                    &quot;lua_type&quot;: &quot;boolean?&quot;,
+                    &quot;desc&quot;: &quot;Whether to show the maximum framerate. Defaults to `true`.&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;ShowMin&quot;,
+                    &quot;lua_type&quot;: &quot;boolean?&quot;,
+                    &quot;desc&quot;: &quot;Whether to show the minimum framerate. Defaults to `true`.&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;ShowOnePercentLow&quot;,
+                    &quot;lua_type&quot;: &quot;boolean?&quot;,
+                    &quot;desc&quot;: &quot;Whether to show the 1% and average 1% framerate. Defaults to `true`.&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;ShowPointOnePercentLow&quot;,
+                    &quot;lua_type&quot;: &quot;boolean?&quot;,
+                    &quot;desc&quot;: &quot;Whether to show the .1% and average .1% framerate. Defaults to `true`.&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;FontFace&quot;,
+                    &quot;lua_type&quot;: &quot;Font?&quot;,
+                    &quot;desc&quot;: &quot;The font face to use. Defaults to `RobotoMono`.&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;TextSize&quot;,
+                    &quot;lua_type&quot;: &quot;number?&quot;,
+                    &quot;desc&quot;: &quot;The text size to use. Defaults to `20`.&quot;
+                }
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 308,
+                &quot;path&quot;: &quot;src/init.lua&quot;
+            }
+        }
+    ],
     &quot;name&quot;: &quot;RoFraps&quot;,
     &quot;desc&quot;: &quot;If you know the recording software called FRAPS, that&#x27;s what this is named after. FRAPS is not just a recording software, but it also allows\nbenchmarking. It offers a way to view the current framerate on screen and measure the average, max, and min framerates by default, and with\nFRAFS you can also get the 1% and 0.1% lows. RoFraps basically offers all of these for a Roblox use-case, since you can&#x27;t run FRAPS on anything\nbut Windows devices. The reason this is a class is for a singular state. You can convert it into a classless module if you want.&quot;,
     &quot;source&quot;: {
-        &quot;line&quot;: 14,
+        &quot;line&quot;: 17,
         &quot;path&quot;: &quot;src/init.lua&quot;
     }
-}</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a><ul><li><a href="#DataUpdated" class="table-of-contents__link toc-highlight">DataUpdated</a></li><li><a href="#Framerate" class="table-of-contents__link toc-highlight">Framerate</a></li><li><a href="#FramerateAverage" class="table-of-contents__link toc-highlight">FramerateAverage</a></li><li><a href="#Max" class="table-of-contents__link toc-highlight">Max</a></li><li><a href="#Min" class="table-of-contents__link toc-highlight">Min</a></li><li><a href="#OnePercentLow" class="table-of-contents__link toc-highlight">OnePercentLow</a></li><li><a href="#OnePercentLowAverage" class="table-of-contents__link toc-highlight">OnePercentLowAverage</a></li><li><a href="#PointOnePercentLow" class="table-of-contents__link toc-highlight">PointOnePercentLow</a></li><li><a href="#PointOnePercentLowAverage" class="table-of-contents__link toc-highlight">PointOnePercentLowAverage</a></li><li><a href="#TimeFunction" class="table-of-contents__link toc-highlight">TimeFunction</a></li><li><a href="#UpdateRate" class="table-of-contents__link toc-highlight">UpdateRate</a></li></ul></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#Destroy" class="table-of-contents__link toc-highlight">:Destroy</a></li><li><a href="#IsRunning" class="table-of-contents__link toc-highlight">:IsRunning</a></li><li><a href="#Start" class="table-of-contents__link toc-highlight">:Start</a></li><li><a href="#Stop" class="table-of-contents__link toc-highlight">:Stop</a></li><li><a href="#new" class="table-of-contents__link toc-highlight">.new</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Built with Moonwave and Docusaurus</div></div></div></footer></div>
-<script src="/RoFraps/assets/js/runtime~main.3e2971d4.js"></script>
-<script src="/RoFraps/assets/js/main.4f0af7be.js"></script>
+}</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a><ul><li><a href="#IRenderProps" class="table-of-contents__link toc-highlight">IRenderProps</a></li></ul></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a><ul><li><a href="#DataUpdated" class="table-of-contents__link toc-highlight">DataUpdated</a></li><li><a href="#Framerate" class="table-of-contents__link toc-highlight">Framerate</a></li><li><a href="#FramerateAverage" class="table-of-contents__link toc-highlight">FramerateAverage</a></li><li><a href="#Max" class="table-of-contents__link toc-highlight">Max</a></li><li><a href="#Min" class="table-of-contents__link toc-highlight">Min</a></li><li><a href="#OnePercentLow" class="table-of-contents__link toc-highlight">OnePercentLow</a></li><li><a href="#OnePercentLowAverage" class="table-of-contents__link toc-highlight">OnePercentLowAverage</a></li><li><a href="#PointOnePercentLow" class="table-of-contents__link toc-highlight">PointOnePercentLow</a></li><li><a href="#PointOnePercentLowAverage" class="table-of-contents__link toc-highlight">PointOnePercentLowAverage</a></li><li><a href="#TimeFunction" class="table-of-contents__link toc-highlight">TimeFunction</a></li><li><a href="#UpdateRate" class="table-of-contents__link toc-highlight">UpdateRate</a></li></ul></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#Destroy" class="table-of-contents__link toc-highlight">:Destroy</a></li><li><a href="#IsRunning" class="table-of-contents__link toc-highlight">:IsRunning</a></li><li><a href="#MountGui" class="table-of-contents__link toc-highlight">:MountGui</a></li><li><a href="#Start" class="table-of-contents__link toc-highlight">:Start</a></li><li><a href="#Stop" class="table-of-contents__link toc-highlight">:Stop</a></li><li><a href="#UnmountGui" class="table-of-contents__link toc-highlight">:UnmountGui</a></li><li><a href="#new" class="table-of-contents__link toc-highlight">.new</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Built with Moonwave and Docusaurus</div></div></div></footer></div>
+<script src="/RoFraps/assets/js/runtime~main.b86292cd.js"></script>
+<script src="/RoFraps/assets/js/main.11331317.js"></script>
 </body>
 </html>
