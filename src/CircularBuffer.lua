@@ -11,11 +11,11 @@ function CircularBuffer.new(MaxCapacity: number)
 	}, CircularBuffer)
 end
 
-function CircularBuffer.FromPreallocation<T>(MaxCapacity: number, Value: T): CircularBuffer<T>
+function CircularBuffer.FromPreallocation<T>(MaxCapacity: number, _: T): CircularBuffer<T>
 	return (
 		setmetatable({
 			Capacity = MaxCapacity;
-			Data = table.create(MaxCapacity, Value);
+			Data = table.create(MaxCapacity);
 			Index = MaxCapacity + 1;
 		}, CircularBuffer) :: any
 	) :: CircularBuffer<T>
