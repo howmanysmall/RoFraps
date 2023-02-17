@@ -166,11 +166,10 @@ function RoFraps:Start()
 	local FrameUpdateArray = self.FrameUpdateArray
 
 	local TimeFunction = self.TimeFunction
-
 	local StartTime = TimeFunction()
+
 	self.Connection = RunService.Heartbeat:Connect(function(DeltaTime)
 		local TotalTime = self.TotalTime + DeltaTime
-		self.TotalTime = TotalTime
 
 		local LastIteration = TimeFunction()
 		for Index = #FrameUpdateArray, 1, -1 do
@@ -189,6 +188,7 @@ function RoFraps:Start()
 		self.Min = math.min(self.Min, Framerate)
 
 		if TotalTime >= self.UpdateRate then
+			self.TotalTime = 0
 			local SortedFramerates = table.clone(FramerateBuffer.Data)
 			local FramerateLength = #SortedFramerates
 			table.sort(SortedFramerates)
@@ -214,6 +214,8 @@ function RoFraps:Start()
 			self.PointOnePercentLowAverage = math.round(SortedAverages[math.floor(AverageLength / 1000)] or 0)
 
 			self.DataUpdated:Fire()
+		else
+			self.TotalTime = TotalTime
 		end
 	end)
 
