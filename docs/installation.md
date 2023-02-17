@@ -97,7 +97,7 @@ HttpService.HttpEnabled = HttpEnabled`}
 
 ```toml
 [dependencies]
-RoFraps = "howmanysmall/rofraps@^1.1.0"
+RoFraps = "howmanysmall/rofraps@^1.2.0"
 ```
 
 ## Next

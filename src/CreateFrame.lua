@@ -8,8 +8,12 @@ type ITextLabels = {
 }
 
 local function CreateFrame(
+	AnchorPoint: Vector2,
 	FontFace: Font,
+	Position: UDim2,
+	TextColor3: Color3,
 	TextSize: number,
+	TextStrokeColor3: Color3,
 
 	ShowFramerate: boolean,
 	ShowMax: boolean,
@@ -18,12 +22,14 @@ local function CreateFrame(
 	ShowPointOnePercentLow: boolean
 )
 	local FrapsFrame = Instance.new("Frame")
-	FrapsFrame.AnchorPoint = Vector2.yAxis
+	FrapsFrame.AnchorPoint = AnchorPoint
 	FrapsFrame.AutoLocalize = false
 	FrapsFrame.AutomaticSize = Enum.AutomaticSize.XY
 	FrapsFrame.BackgroundTransparency = 1
 	FrapsFrame.Name = "FrapsFrame"
-	FrapsFrame.Position = UDim2.fromScale(0, 1)
+	FrapsFrame.Position = Position
+
+	local StrokeHex = "#" .. TextStrokeColor3:ToHex()
 
 	local UIListLayout = Instance.new("UIListLayout")
 	UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
@@ -43,8 +49,9 @@ local function CreateFrame(
 		FramerateLabel.LayoutOrder = LayoutOrder
 		FramerateLabel.Name = "FramerateLabel"
 		FramerateLabel.RichText = true
-		FramerateLabel.Text = "<stroke color=\"#000000\" joins=\"miter\" thickness=\"2\"><b>FPS: </b>0 / 0</stroke>"
-		FramerateLabel.TextColor3 = Color3.fromRGB(255, 239, 7)
+		FramerateLabel.Text =
+			string.format("<stroke color=%q joins=\"miter\" thickness=\"2\"><b>FPS: </b>0 / 0</stroke>", StrokeHex)
+		FramerateLabel.TextColor3 = TextColor3
 		FramerateLabel.TextSize = TextSize
 		FramerateLabel.TextWrapped = true
 		FramerateLabel.TextXAlignment = Enum.TextXAlignment.Left
@@ -67,8 +74,10 @@ local function CreateFrame(
 		OnePercentLabel.LayoutOrder = LayoutOrder
 		OnePercentLabel.Name = "OnePercentLabel"
 		OnePercentLabel.RichText = true
-		OnePercentLabel.Text = "<stroke color=\"#000000\" joins=\"miter\" thickness=\"2\"><b> 1%: </b>0 / 0</stroke>"
-		OnePercentLabel.TextColor3 = Color3.fromRGB(255, 239, 7)
+		OnePercentLabel.Text =
+			string.format("<stroke color=%q joins=\"miter\" thickness=\"2\"><b> 1%%: </b>0 / 0</stroke>", StrokeHex)
+
+		OnePercentLabel.TextColor3 = TextColor3
 		OnePercentLabel.TextSize = TextSize
 		OnePercentLabel.TextWrapped = true
 		OnePercentLabel.TextXAlignment = Enum.TextXAlignment.Left
@@ -93,8 +102,9 @@ local function CreateFrame(
 		PointOnePercentLabel.Name = "PointOnePercentLabel"
 		PointOnePercentLabel.RichText = true
 		PointOnePercentLabel.Text =
-			"<stroke color=\"#000000\" joins=\"miter\" thickness=\"2\"><b>.1%: </b>0 / 0</stroke>"
-		PointOnePercentLabel.TextColor3 = Color3.fromRGB(255, 239, 7)
+			string.format("<stroke color=%q joins=\"miter\" thickness=\"2\"><b>.1%%: </b>0 / 0</stroke>", StrokeHex)
+
+		PointOnePercentLabel.TextColor3 = TextColor3
 		PointOnePercentLabel.TextSize = TextSize
 		PointOnePercentLabel.TextWrapped = true
 		PointOnePercentLabel.TextXAlignment = Enum.TextXAlignment.Left
@@ -118,8 +128,10 @@ local function CreateFrame(
 		MaxLabel.LayoutOrder = LayoutOrder
 		MaxLabel.Name = "MaxLabel"
 		MaxLabel.RichText = true
-		MaxLabel.Text = "<stroke color=\"#000000\" joins=\"miter\" thickness=\"2\"><b>MAX: </b>0</stroke>"
-		MaxLabel.TextColor3 = Color3.fromRGB(255, 239, 7)
+		MaxLabel.Text =
+			string.format("<stroke color=%q joins=\"miter\" thickness=\"2\"><b>MAX: </b>0</stroke>", StrokeHex)
+
+		MaxLabel.TextColor3 = TextColor3
 		MaxLabel.TextSize = TextSize
 		MaxLabel.TextWrapped = true
 		MaxLabel.TextXAlignment = Enum.TextXAlignment.Left
@@ -142,8 +154,10 @@ local function CreateFrame(
 		MinLabel.LayoutOrder = LayoutOrder
 		MinLabel.Name = "MinLabel"
 		MinLabel.RichText = true
-		MinLabel.Text = "<stroke color=\"#000000\" joins=\"miter\" thickness=\"2\"><b>MIN: </b>0</stroke>"
-		MinLabel.TextColor3 = Color3.fromRGB(255, 239, 7)
+		MinLabel.Text =
+			string.format("<stroke color=%q joins=\"miter\" thickness=\"2\"><b>MIN: </b>0</stroke>", StrokeHex)
+
+		MinLabel.TextColor3 = TextColor3
 		MinLabel.TextSize = 20
 		MinLabel.TextWrapped = true
 		MinLabel.TextXAlignment = Enum.TextXAlignment.Left

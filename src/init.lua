@@ -252,39 +252,44 @@ function RoFraps:Stop()
 end
 
 local UpdateTextFunctions = {
-	ShowFramerate = function(self: Class, TextLabel: TextLabel)
+	ShowFramerate = function(self: Class, TextLabel: TextLabel, StrokeHex: string)
 		TextLabel.Text = string.format(
-			"<stroke color=\"#000000\" joins=\"miter\" thickness=\"2\"><b>FPS: </b>%* / %*</stroke>",
+			"<stroke color=%q joins=\"miter\" thickness=\"2\"><b>FPS: </b>%* / %*</stroke>",
+			StrokeHex,
 			math.round(self.Framerate),
 			math.round(self.FramerateAverage)
 		)
 	end;
 
-	ShowMax = function(self: Class, TextLabel: TextLabel)
+	ShowMax = function(self: Class, TextLabel: TextLabel, StrokeHex: string)
 		TextLabel.Text = string.format(
-			"<stroke color=\"#000000\" joins=\"miter\" thickness=\"2\"><b>MAX: </b>%*</stroke>",
+			"<stroke color=%q joins=\"miter\" thickness=\"2\"><b>MAX: </b>%*</stroke>",
+			StrokeHex,
 			math.round(self.Max)
 		)
 	end;
 
-	ShowMin = function(self: Class, TextLabel: TextLabel)
+	ShowMin = function(self: Class, TextLabel: TextLabel, StrokeHex: string)
 		TextLabel.Text = string.format(
-			"<stroke color=\"#000000\" joins=\"miter\" thickness=\"2\"><b>MIN: </b>%*</stroke>",
+			"<stroke color=%q joins=\"miter\" thickness=\"2\"><b>MIN: </b>%*</stroke>",
+			StrokeHex,
 			math.round(self.Min)
 		)
 	end;
 
-	ShowOnePercentLow = function(self: Class, TextLabel: TextLabel)
+	ShowOnePercentLow = function(self: Class, TextLabel: TextLabel, StrokeHex: string)
 		TextLabel.Text = string.format(
-			"<stroke color=\"#000000\" joins=\"miter\" thickness=\"2\"><b> 1%%: </b>%* / %*</stroke>",
+			"<stroke color=%q joins=\"miter\" thickness=\"2\"><b> 1%%: </b>%* / %*</stroke>",
+			StrokeHex,
 			math.round(self.OnePercentLow),
 			math.round(self.OnePercentLowAverage)
 		)
 	end;
 
-	ShowPointOnePercentLow = function(self: Class, TextLabel: TextLabel)
+	ShowPointOnePercentLow = function(self: Class, TextLabel: TextLabel, StrokeHex: string)
 		TextLabel.Text = string.format(
-			"<stroke color=\"#000000\" joins=\"miter\" thickness=\"2\"><b>.1%%: </b>%* / %*</stroke>",
+			"<stroke color=%q joins=\"miter\" thickness=\"2\"><b>.1%%: </b>%* / %*</stroke>",
+			StrokeHex,
 			math.round(self.PointOnePercentLow),
 			math.round(self.PointOnePercentLowAverage)
 		)
@@ -301,8 +306,12 @@ export type IRenderProps = MergeDefaults.IRenderProps
 	.ShowMin boolean? -- Whether to show the minimum framerate. Defaults to `true`.
 	.ShowOnePercentLow boolean? -- Whether to show the 1% and average 1% framerate. Defaults to `true`.
 	.ShowPointOnePercentLow boolean? -- Whether to show the .1% and average .1% framerate. Defaults to `true`.
+	.AnchorPoint Vector2? -- The anchor point to use. Defaults to `Vector2.yAxis`.
 	.FontFace Font? -- The font face to use. Defaults to `RobotoMono`.
+	.Position UDim2? -- The position to use. Defaults to `UDim2.fromScale(0, 1)`.
+	.TextColor3 Color3? -- The text color to use. Defaults to `Color3.fromRGB(255, 239, 7)`.
 	.TextSize number? -- The text size to use. Defaults to `20`.
+	.TextStrokeColor3 Color3? -- The text stroke color to use. Defaults to `Color3.fromRGB(0, 0, 0)`.
 	@within RoFraps
 ]=]
 
@@ -325,11 +334,28 @@ function RoFraps:MountGui(Parent: Instance, Properties: IRenderProps?)
 	local ShowOnePercentLow = TrueProperties.ShowOnePercentLow
 	local ShowPointOnePercentLow = TrueProperties.ShowPointOnePercentLow
 
+	local AnchorPoint = TrueProperties.AnchorPoint
 	local FontFace = TrueProperties.FontFace
+	local Position = TrueProperties.Position
+	local TextColor3 = TrueProperties.TextColor3
 	local TextSize = TrueProperties.TextSize
+	local TextStrokeColor3 = TrueProperties.TextStrokeColor3
 
-	local FrapsFrame, TextLabels =
-		CreateFrame(FontFace, TextSize, ShowFramerate, ShowMax, ShowMin, ShowOnePercentLow, ShowPointOnePercentLow)
+	local StrokeHex = "#" .. TextStrokeColor3:ToHex()
+
+	local FrapsFrame, TextLabels = CreateFrame(
+		AnchorPoint,
+		FontFace,
+		Position,
+		TextColor3,
+		TextSize,
+		TextStrokeColor3,
+		ShowFramerate,
+		ShowMax,
+		ShowMin,
+		ShowOnePercentLow,
+		ShowPointOnePercentLow
+	)
 
 	local function OnUpdate()
 		for PropertyName, Function in UpdateTextFunctions do
@@ -340,7 +366,7 @@ function RoFraps:MountGui(Parent: Instance, Properties: IRenderProps?)
 					continue
 				end
 
-				Function(self, TextLabel)
+				Function(self, TextLabel, StrokeHex)
 			end
 		end
 	end
