@@ -23,7 +23,7 @@ title = "All platforms supported"
 description = "Unlike its namesake FRAPS and the built in performance menu, RoFraps supports ALL platforms."
 
 [[home.features]]
-title = "Show more then just FPS"
+title = "Show more than just FPS"
 description = "RoFraps calculates more than just the current FPS, it also calculates average FPS, minimum FPS, maximum FPS, 1% lows, and 0.1% lows."
 
 [[home.features]]
